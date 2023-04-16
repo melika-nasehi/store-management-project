@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+
+<BorderPane fx:id="bpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalmidtermproj.AddAdminController">
+   <top>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="37.0" layoutY="62.0" text="Enter the ID of the Store you want to add Admin to it :" />
+            <Label layoutX="254.0" layoutY="14.0" text="Add admin" />
+            <TextField fx:id="storeIdTextField" layoutX="365.0" layoutY="58.0" />
+            <Label layoutX="46.0" layoutY="101.0" text="Which one to add ?" />
+            <Line endX="299.0" endY="-16.800018310546875" layoutX="277.0" layoutY="217.0" startX="-258.6000061035156" startY="-16.800018310546875" />
+            <RadioButton fx:id="admin1RB" layoutX="76.0" layoutY="130.0" mnemonicParsing="false" text="Admin 1 (morning shift)">
+               <toggleGroup>
+                  <ToggleGroup fx:id="adminGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="admin2RB" layoutX="240.0" layoutY="130.0" mnemonicParsing="false" text="Admin 2 (evening shift)" toggleGroup="$adminGroup" />
+            <RadioButton fx:id="admin3RB" layoutX="411.0" layoutY="130.0" mnemonicParsing="false" text="Admin 3 (night shift)" toggleGroup="$adminGroup" />
+            <Button fx:id="next" layoutX="112.0" layoutY="163.0" mnemonicParsing="false" onAction="#checkNewAdmin" text="Next" />
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane fx:id="bottomPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
