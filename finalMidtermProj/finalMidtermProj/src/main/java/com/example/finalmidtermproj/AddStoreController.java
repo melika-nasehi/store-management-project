@@ -26,9 +26,6 @@ public class AddStoreController  {
 
     public static ArrayList<Store> stores = new ArrayList<>();
 
-    public ArrayList<Store> returnStoreList () {
-        return stores ;
-    }
 
     public void AddNewStore (ActionEvent event) throws IOException {
         File file = new File("stores.txt");
@@ -36,8 +33,6 @@ public class AddStoreController  {
 
         String newStoreName = storeNameField.getText();
         String newStoreId = storeIdField.getText();
-        Store newStore = new Store(newStoreName, newStoreId);
-        stores.add(newStore);
         fw.write(newStoreName +"\n"+newStoreId +"\n");
         fw.close();
 

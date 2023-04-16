@@ -35,15 +35,15 @@ public class RemoveAdminController {
                 Main.showAlert("DONE!" , "Admin removed successfully", null , Alert.AlertType.INFORMATION);
                 AddStoreController addStoreController = new AddStoreController();
                 for (Store j: AddStoreController.stores) {
-                    if (shift == 1) {
-                        j.setAdmin1(null);
-                    }
-                    else if (shift == 2) {
-                        j.setAdmin2(null);
-                    }
-                    else if (shift == 3) {
-                        j.setAdmin3(null);
-                    }
+//                    if (shift == 1) {
+//                        j.setAdmin1(null);
+//                    }
+//                    else if (shift == 2) {
+//                        j.setAdmin2(null);
+//                    }
+//                    else if (shift == 3) {
+//                        j.setAdmin3(null);
+//                    }
                 }
 
                 root = FXMLLoader.load(getClass().getResource("managerMenu.fxml"));

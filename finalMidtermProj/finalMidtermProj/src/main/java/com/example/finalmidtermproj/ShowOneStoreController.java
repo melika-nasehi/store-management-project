@@ -31,9 +31,9 @@ public class ShowOneStoreController {
 
                 nameLabel.setText(i.getsName());
                 idLabel.setText(idField.getText());
-                admin1Label.setText(String.valueOf(i.getAdmin1())) ;
-                admin2Label.setText(String.valueOf(i.getAdmin2())) ;
-                admin3Label.setText(String.valueOf(i.getAdmin3())) ;
+//                admin1Label.setText(String.valueOf(i.getAdmin1())) ;
+//                admin2Label.setText(String.valueOf(i.getAdmin2())) ;
+//                admin3Label.setText(String.valueOf(i.getAdmin3())) ;
                 isFound = true ;
 
             }

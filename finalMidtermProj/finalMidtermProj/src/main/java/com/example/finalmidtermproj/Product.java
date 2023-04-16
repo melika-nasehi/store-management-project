@@ -3,14 +3,16 @@ package com.example.finalmidtermproj;
 import javafx.scene.control.Label;
 
 public class Product {
+
+    public String pStoreID ;
     public String pName ;
     public double pPrice ;
     public String pID ;
-
     public Label pLabel ;
     public int pCount ;
 
-    public Product(String name , double price , String id , Label label  , int count ) {
+    public Product(String storeid ,String name , double price , String id , Label label  , int count ) {
+        pStoreID = storeid ;
         pName = name ;
         pPrice = price ;
         pID = id ;

@@ -11,7 +11,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class RemoveStoreController {
     private Stage stage  ;
@@ -23,14 +28,31 @@ public class RemoveStoreController {
     @FXML
     private TextField deleteID ;
 
+
     @FXML
     private void deleteStore (ActionEvent event) throws IOException {
 
+        ArrayList<Store> storeList = new ArrayList<>();
+        Scanner mySc = new Scanner("stores.txt");
+
+        while (mySc.hasNext()) {
+            String name = mySc.nextLine() ;
+            String id = mySc.nextLine() ;
+            Store store = new Store(name , id);
+            storeList.add(store);
+        }
+        mySc.close();
+
+
         boolean isFound = false ;
-        for (Store i: AddStoreController.stores) {
+        for (Store i: storeList) {
             if (i.getsID().equals(deleteID.getText())) {
 
-                AddStoreController.stores.remove(i) ;
+                storeList.remove(i) ;
+
+                PrintWriter pw = new PrintWriter("stores.txt");
+                pw.close();
+
                 Main.showAlert("DONE!" , "Store removed successfully", null , Alert.AlertType.INFORMATION);
 
                 root = FXMLLoader.load(getClass().getResource("managerMenu.fxml"));

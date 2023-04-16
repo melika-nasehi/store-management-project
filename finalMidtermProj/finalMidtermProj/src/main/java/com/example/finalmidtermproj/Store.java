@@ -5,9 +5,11 @@ import java.util.ArrayList;
 public class Store {
     public String sName ;
     public String sID ;
-    public Admin admin1 ;
-    public Admin admin2 ;
-    public Admin admin3 ;
+
+    boolean Admin1 = false ;
+    boolean Admin2 = false ;
+    boolean Admin3 = false ;
+
     //ArrayList<Product> products = new ArrayList<>();
 
 
@@ -36,29 +38,6 @@ public class Store {
         this.sID = sID;
     }
 
-    public Admin getAdmin1() {
-        return admin1;
-    }
-
-    public void setAdmin1(Admin admin1) {
-        this.admin1 = admin1;
-    }
-
-    public Admin getAdmin2() {
-        return admin2;
-    }
-
-    public void setAdmin2(Admin admin2) {
-        this.admin2 = admin2;
-    }
-
-    public Admin getAdmin3() {
-        return admin3;
-    }
-
-    public void setAdmin3(Admin admin3) {
-        this.admin3 = admin3;
-    }
 
     @Override
     public String toString() {
