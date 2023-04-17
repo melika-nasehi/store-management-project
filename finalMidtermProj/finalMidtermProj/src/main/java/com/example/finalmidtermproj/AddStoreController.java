@@ -36,7 +36,6 @@ public class AddStoreController  {
         fw.write(newStoreName +"\n"+newStoreId +"\n");
         fw.close();
 
-
         showAlert();
 
         root = FXMLLoader.load(getClass().getResource("managerMenu.fxml"));

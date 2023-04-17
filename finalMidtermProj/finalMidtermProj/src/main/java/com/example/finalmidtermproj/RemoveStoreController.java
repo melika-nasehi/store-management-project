@@ -11,10 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -32,19 +29,10 @@ public class RemoveStoreController {
     @FXML
     private void deleteStore (ActionEvent event) throws IOException {
 
-        ArrayList<Store> storeList = new ArrayList<>();
-        Scanner mySc = new Scanner("stores.txt");
-
-        while (mySc.hasNext()) {
-            String name = mySc.nextLine() ;
-            String id = mySc.nextLine() ;
-            Store store = new Store(name , id);
-            storeList.add(store);
-        }
-        mySc.close();
-
 
         boolean isFound = false ;
+        ArrayList<Store> storeList = Main.storeFileTOArraylist();
+
         for (Store i: storeList) {
             if (i.getsID().equals(deleteID.getText())) {
 
@@ -52,6 +40,10 @@ public class RemoveStoreController {
 
                 PrintWriter pw = new PrintWriter("stores.txt");
                 pw.close();
+                FileWriter fw3 = new FileWriter("stores.txt" ) ;
+                for (Store j: storeList) {
+                    fw3.write(j.getsName() +"\n" + j.getsID() + "\n") ;
+                }fw3.close();
 
                 Main.showAlert("DONE!" , "Store removed successfully", null , Alert.AlertType.INFORMATION);
 
@@ -63,10 +55,10 @@ public class RemoveStoreController {
                 isFound = true ;
 
                 break;
-
             }
         }
         if (! isFound)
             Main.showAlert("ERROR" , "NO Store was found with this ID" , null , Alert.AlertType.ERROR);
     }
+
 }
