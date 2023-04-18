@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class ShowOneStoreController {
     private Stage stage  ;
     private Scene scene ;
@@ -25,15 +27,32 @@ public class ShowOneStoreController {
     public void ShowInfo () {
 
         boolean isFound = false ;
+        ArrayList<Store> storeList = Main.storeFileTOArraylist();
+        ArrayList<Admin> adminList = Main.adminFileTOArraylist();
 
-        for (Store i : AddStoreController.stores) {
+        for (Store i : storeList) {
             if (i.getsID().equals(idField.getText())) {
 
                 nameLabel.setText(i.getsName());
-                idLabel.setText(idField.getText());
-//                admin1Label.setText(String.valueOf(i.getAdmin1())) ;
-//                admin2Label.setText(String.valueOf(i.getAdmin2())) ;
-//                admin3Label.setText(String.valueOf(i.getAdmin3())) ;
+                idLabel.setText(i.getsID());
+                admin1Label.setText("Empty"); ;
+                admin2Label.setText("Empty"); ;
+                admin3Label.setText("Empty"); ;
+
+                for (Admin j: adminList) {
+                    if (j.getaStoreID().equals(idField.getText()))
+                    {
+                        if (j.getaShift().equals("1"))
+                            admin1Label.setText(j.toString()) ;
+                        else if (j.getaShift().equals("2"))
+                            admin2Label.setText(j.toString()) ;
+                        else if (j.getaShift().equals("3"))
+                            admin3Label.setText(j.toString()) ;
+
+                    }
+
+                }
+
                 isFound = true ;
 
             }

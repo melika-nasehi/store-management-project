@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class RemoveAdminController {
     private Stage stage  ;
@@ -27,11 +28,12 @@ public class RemoveAdminController {
     private void deleteAdmin (ActionEvent event) throws IOException {
 
         boolean isFound = false ;
-        for (Admin i: Admin.adminList) {
+        ArrayList<Admin> adminList = Main.adminFileTOArraylist();
+        for (Admin i: adminList) {
             if (i.getaID().equals(adminDeleteID.getText())) {
 
-                Admin.adminList.remove(i) ;
-                int shift = i.getaShift() ;
+                adminList.remove(i) ;
+                String shift = i.getaShift() ;
                 Main.showAlert("DONE!" , "Admin removed successfully", null , Alert.AlertType.INFORMATION);
                 AddStoreController addStoreController = new AddStoreController();
                 for (Store j: AddStoreController.stores) {

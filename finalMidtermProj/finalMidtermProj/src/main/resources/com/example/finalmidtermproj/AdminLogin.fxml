@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalmidtermproj.SceneMngController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalmidtermproj.AdminLogin">
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="226.0" layoutY="225.0" promptText="password" />
-            <TextField fx:id="usernameField" focusTraversable="false" layoutX="227.0" layoutY="138.0" promptText="username" />
+            <PasswordField fx:id="adminPassField" focusTraversable="false" layoutX="226.0" layoutY="225.0" promptText="your Store ID" />
+            <TextField fx:id="adminUserField" focusTraversable="false" layoutX="227.0" layoutY="138.0" promptText="your personal ID" />
             <Label layoutX="120.0" layoutY="142.0" text="Username :">
                <font>
                   <Font name="Cambria Bold" size="13.0" />
@@ -23,12 +23,12 @@
                   <Font name="Cambria Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="258.0" layoutY="57.0" text="Manager" textFill="#0ea5cf">
+            <Label layoutX="268.0" layoutY="57.0" text="Admin" textFill="#0dd12b">
                <font>
                   <Font name="Berlin Sans FB Demi Bold" size="21.0" />
                </font>
             </Label>
-            <Button fx:id="loginButton" defaultButton="true" layoutX="262.0" layoutY="326.0" mnemonicParsing="false" onAction="#switchToSceneManager" prefHeight="28.0" prefWidth="78.0" text="login">
+            <Button fx:id="loginButtonAdmin" defaultButton="true" layoutX="262.0" layoutY="326.0" mnemonicParsing="false" onAction="#switchToSceneAdmin" prefHeight="28.0" prefWidth="78.0" text="login">
                <font>
                   <Font name="Calibri Light Italic" size="15.0" />
                </font>

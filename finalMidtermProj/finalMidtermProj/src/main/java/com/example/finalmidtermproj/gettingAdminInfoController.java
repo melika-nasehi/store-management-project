@@ -29,6 +29,8 @@ public class gettingAdminInfoController {
         if (AddAdminController.choice == 1) {
             AddNewAdmin(1 );
             showAlert();
+
+
             root = FXMLLoader.load(getClass().getResource("managerMenu.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);

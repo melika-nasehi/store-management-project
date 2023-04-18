@@ -6,16 +6,19 @@ public class Store {
     public String sName ;
     public String sID ;
 
-    boolean hasAdmin1 = false ;
-    boolean hasAdmin2 = false ;
-    boolean hasAdmin3 = false ;
+    boolean hasAdmin1  ;
+    boolean hasAdmin2  ;
+    boolean hasAdmin3  ;
 
     //ArrayList<Product> products = new ArrayList<>();
 
 
-    public Store (String name, String id ) {       //manager
+    public Store (String name, String id , boolean A1 , boolean A2 , boolean A3) {       //manager
         sName = name ;
         sID = id ;
+        hasAdmin1 = A1 ;
+        hasAdmin2 = A2 ;
+        hasAdmin3 = A3 ;
     }
     public Store() {
     }

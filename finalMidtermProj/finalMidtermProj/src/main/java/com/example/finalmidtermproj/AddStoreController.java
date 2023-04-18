@@ -29,20 +29,36 @@ public class AddStoreController  {
 
     public void AddNewStore (ActionEvent event) throws IOException {
         File file = new File("stores.txt");
-        FileWriter fw = new FileWriter(file , true) ;
+
+        FileWriter fw = new FileWriter("stores.txt" , true) ;
+
+        ArrayList<Store> storeList = new ArrayList<>();
+        storeList = Main.storeFileTOArraylist() ;
 
         String newStoreName = storeNameField.getText();
         String newStoreId = storeIdField.getText();
-        fw.write(newStoreName +"\n"+newStoreId +"\n");
-        fw.close();
+        boolean isFound = false ;
+        for (Store i: storeList) {
+            if (i.getsID().equals(newStoreId)) {
+                isFound = true ;
+                Main.showAlert("ERROR!", "there is already a store with this ID",
+                        "store ID should be unique", Alert.AlertType.ERROR);
+            }
+        }
 
-        showAlert();
+            if (! isFound) {
+                fw.write(newStoreName + "\n" + newStoreId + "\n" + false + "\n" + false + "\n" + false + "\n");
+                fw.close();
 
-        root = FXMLLoader.load(getClass().getResource("managerMenu.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+                showAlert();
+
+                root = FXMLLoader.load(getClass().getResource("managerMenu.fxml"));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+
     }
 
     private void showAlert() {

@@ -9,10 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -38,24 +35,32 @@ public class AddAdminController implements Initializable {
 
     ArrayList<Store> storeList = new ArrayList<>();
 
-    public void checkNewAdmin() {
+    public void checkNewAdmin() throws IOException {
 
         ArrayList<Store> storeList = Main.storeFileTOArraylist();
 
-
         storeID = storeIdTextField.getText() ;
+
 
         if (admin1RB.isSelected()) {
             boolean isFound = false ;
             for (Store i : storeList) {
-                if (i.getsID().equals(storeID) && (i.hasAdmin1 == false)) {
+                if (i.getsID().equals(storeID) && (!i.hasAdmin1)) {
                     choice = 1 ;
                     isFound = true ;
-                    System.out.println(String.valueOf(i.hasAdmin1));
-                    i.hasAdmin1 = true;
+                    i.setHasAdmin1(true);
+
+                    PrintWriter pw = new PrintWriter("stores.txt");
+                    pw.close();
+                    FileWriter fw = new FileWriter("stores.txt" ) ;
+                    for (Store j: storeList) {
+                        fw.write(j.getsName() +"\n" + j.getsID() + "\n" + j.hasAdmin1()+ "\n"+ j.hasAdmin2()+ "\n"+ j.hasAdmin3()+"\n") ;
+                    }fw.close();
+
+
                     loadInfoPage();
                 }
-                else if (i.getsID().equals(storeID) && (i.hasAdmin1 == true)) {
+                else if (i.getsID().equals(storeID) && (i.hasAdmin1)) {
                     showAlert("Admin #1 already exists");
                     isFound = true;
                 }
@@ -68,13 +73,21 @@ public class AddAdminController implements Initializable {
 
             boolean isFound = false ;
             for (Store i : storeList) {
-                if (i.getsID().equals(storeID) && (!i.hasAdmin2())) {
+                if (i.getsID().equals(storeID) && (!i.hasAdmin2)) {
                     choice = 2 ;
                     isFound = true ;
                     i.setHasAdmin2(true);
+
+                    PrintWriter pw = new PrintWriter("stores.txt");
+                    pw.close();
+                    FileWriter fw = new FileWriter("stores.txt" ) ;
+                    for (Store j: storeList) {
+                        fw.write(j.getsName() +"\n" + j.getsID() + "\n" + j.hasAdmin1()+ "\n"+ j.hasAdmin2()+ "\n"+ j.hasAdmin3()+"\n") ;
+                    }fw.close();
+
                     loadInfoPage();
                 }
-                else if (i.getsID().equals(storeID) && (i.hasAdmin2())) {
+                else if (i.getsID().equals(storeID) && (i.hasAdmin2)) {
                     showAlert("Admin #2 already exists");
                     isFound = true;
                 }
@@ -86,13 +99,21 @@ public class AddAdminController implements Initializable {
         else if (admin3RB.isSelected()) {
             boolean isFound = false ;
             for (Store i : storeList) {
-                if (i.getsID().equals(storeID) && (!i.hasAdmin3())) {
+                if (i.getsID().equals(storeID) && (i.hasAdmin3== false)) {
                     choice = 3 ;
                     isFound = true ;
                     i.setHasAdmin3(true);
+
+                    PrintWriter pw = new PrintWriter("stores.txt");
+                    pw.close();
+                    FileWriter fw = new FileWriter("stores.txt" ) ;
+                    for (Store j: storeList) {
+                        fw.write(j.getsName() +"\n" + j.getsID() + "\n" + j.hasAdmin1()+ "\n"+ j.hasAdmin2()+ "\n"+ j.hasAdmin3()+"\n") ;
+                    }fw.close();
+
                     loadInfoPage();
                 }
-                else if (i.getsID().equals(storeID) && (!i.hasAdmin3())) {
+                else if (i.getsID().equals(storeID) && (i.hasAdmin3)) {
                     showAlert("Admin #3 already exists");
                     isFound = true;
                 }

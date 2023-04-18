@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class RemoveStoreController {
@@ -40,10 +41,24 @@ public class RemoveStoreController {
 
                 PrintWriter pw = new PrintWriter("stores.txt");
                 pw.close();
-                FileWriter fw3 = new FileWriter("stores.txt" ) ;
+                FileWriter fw = new FileWriter("stores.txt" ) ;
                 for (Store j: storeList) {
-                    fw3.write(j.getsName() +"\n" + j.getsID() + "\n") ;
-                }fw3.close();
+                    fw.write(j.getsName() +"\n" + j.getsID() + "\n" + j.hasAdmin1()+ "\n"+ j.hasAdmin2()+ "\n"+ j.hasAdmin3()+"\n") ;
+                }fw.close();
+
+                ArrayList<Admin> adminList = Main.adminFileTOArraylist();
+
+
+                adminList.removeIf(j -> j.aStoreID.equals(deleteID.getText()));
+
+                PrintWriter pw2 = new PrintWriter("admins.txt") ;
+                pw2.close();
+                FileWriter fw2 = new FileWriter("admins.txt" ) ;
+                for (Admin k : adminList) {
+                    fw2.write(k.getaName() + "\n" + k.getaID()+"\n"+k.getaStoreID()+"\n"+k.getaShift()+"\n");
+                }fw2.close();
+
+
 
                 Main.showAlert("DONE!" , "Store removed successfully", null , Alert.AlertType.INFORMATION);
 

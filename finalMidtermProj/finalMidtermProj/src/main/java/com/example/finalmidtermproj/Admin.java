@@ -6,10 +6,10 @@ public class Admin {
     public String aName ;
     public String aID ;    //Admins password
     public String aStoreID;
-    public int aShift ;   // 1 , 2 , 3
+    public String aShift ;   // 1 , 2 , 3
     public static ArrayList<Admin> adminList = new ArrayList<>();
 
-    public Admin (String name , String id , String storeID , int shift ) {
+    public Admin (String name , String id , String storeID , String shift ) {
         aName = name ;
         aID = id ;
         aStoreID = storeID ;
@@ -40,11 +40,11 @@ public class Admin {
         this.aStoreID = aStoreID;
     }
 
-    public int getaShift() {
+    public String getaShift() {
         return aShift;
     }
 
-    public void setaShift(int aShift) {
+    public void setaShift(String aShift) {
         this.aShift = aShift;
     }
 
@@ -58,11 +58,11 @@ public class Admin {
 
     @Override
     public String toString() {
-        return "[ " +
-                "Name= " + aName +
-                ",  ID= " + aID  +
-                ",  StoreID= " + aStoreID +
-                ",  Shift= " + aShift +
-                " ]";
+        return "Admin{" +
+                "aName='" + aName + '\'' +
+                ", aID='" + aID + '\'' +
+                ", aStoreID='" + aStoreID + '\'' +
+                ", aShift='" + aShift + '\'' +
+                '}';
     }
 }

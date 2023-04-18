@@ -4,19 +4,19 @@ import javafx.scene.control.Label;
 
 public class Product {
 
-    public String pStoreID ;
     public String pName ;
-    public double pPrice ;
     public String pID ;
-    public Label pLabel ;
-    public int pCount ;
+    public int pPrice ;
+    public String pStoreID ;
+    public pLabel label ;
+    public int pCount = 0 ;
 
-    public Product(String storeid ,String name , double price , String id , Label label  , int count ) {
-        pStoreID = storeid ;
+    public Product(String name , String id , int price ,  String storeid , pLabel label , int count ) {
         pName = name ;
         pPrice = price ;
         pID = id ;
-        pLabel = label ;
+        pStoreID = storeid ;
+        this.label = label ;
         pCount = count ;
     }
 
@@ -28,11 +28,11 @@ public class Product {
         this.pName = pName;
     }
 
-    public double getpPrice() {
+    public int getpPrice() {
         return pPrice;
     }
 
-    public void setpPrice(double pPrice) {
+    public void setpPrice(int pPrice) {
         this.pPrice = pPrice;
     }
 
@@ -44,20 +44,28 @@ public class Product {
         this.pID = pID;
     }
 
-    public Label getpLabel() {
-        return pLabel;
+    public String getpStoreID() {
+        return pStoreID;
     }
 
-    public void setpLabel(Label label) {
-        this.pLabel = label;
+    public void setpStoreID(String pStoreID) {
+        this.pStoreID = pStoreID;
+    }
+
+    public pLabel getpLabel() {
+        return label ;
+    }
+
+    public void setpLabel(pLabel label) {
+        this.label = label;
     }
 
     public int getpCount() {
         return pCount;
     }
 
-    public void setpCount(int count) {
-        this.pCount = count;
+    public void setpCount(int pCount) {
+        this.pCount = pCount;
     }
 }
 

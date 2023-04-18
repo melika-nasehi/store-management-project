@@ -7,8 +7,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalmidtermproj.Scene1Controller">
    <children>
-      <Button layoutX="232.0" layoutY="108.0" mnemonicParsing="false" onAction="#switchToSceneManagerLogin" prefHeight="26.0" prefWidth="134.0" text="Manager" />
-      <Button layoutX="232.0" layoutY="167.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="134.0" text="Admin" />
+      <Button defaultButton="true" layoutX="232.0" layoutY="108.0" mnemonicParsing="false" onAction="#switchToSceneManagerLogin" prefHeight="26.0" prefWidth="134.0" text="Manager" />
+      <Button defaultButton="true" layoutX="232.0" layoutY="167.0" mnemonicParsing="false" onAction="#switchToSceneAdminLogin" prefHeight="26.0" prefWidth="134.0" text="Admin" />
       <Button layoutX="232.0" layoutY="229.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="134.0" text="Client" />
       <Label layoutX="263.0" layoutY="45.0" text="Log in as :" textFill="#e71717">
          <font>
