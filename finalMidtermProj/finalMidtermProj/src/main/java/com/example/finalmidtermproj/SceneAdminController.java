@@ -38,15 +38,11 @@ public class SceneAdminController implements Initializable {
 
     @FXML
     private void chargeProduct (MouseEvent event) {
-        loadPage("chargeOrDischargeProduct");
+        loadPage("chargeOrDischarge");
     }
     @FXML
-    private void editProductInfo (MouseEvent event) {
-        loadPage("editProductInfo");
-    }
-    @FXML
-    private void addLabel (MouseEvent event) {
-        loadPage("addLabel");
+    private void findProductToEdit (MouseEvent event) {
+        loadPage("FindProductToEdit");
     }
 
     @FXML

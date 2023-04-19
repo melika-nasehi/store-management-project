@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -23,12 +24,9 @@ public class CreateProductController implements Initializable {
     public TextField productNameField ;
     public TextField productIdField ;
     public TextField productPriceField ;
-    @FXML
-    Label productStoreIdField  ;
+
+    public TextField productStoreIdField ;
     public TextField countField ;
-
-
-    public int count ;
 
     public Button createProductButton ;
     public Button addButton ;
@@ -38,22 +36,28 @@ public class CreateProductController implements Initializable {
     private Parent root ;
 
     public ComboBox labelBox ;
+    int price , count ;
+
 
     public void AddNewProduct (ActionEvent event) throws IOException {
-        try{
+
             File file = new File("products.txt");
 
-            FileWriter fw = null;
+            FileWriter fw = new FileWriter(file , true) ;
 
-            fw = new FileWriter("products.txt", true);
-
+            boolean exception = false ;
 
             String Name = productNameField.getText();
             String id = productIdField.getText();
-            int price = Integer.valueOf(productPriceField.getText());
-            productStoreIdField.setText(String.valueOf(AdminLogin.loginStoreID));
+        try{
+            price = Integer.parseInt(productPriceField.getText());
+            count = Integer.parseInt(countField.getText());
+        }catch (NumberFormatException e) {
+            exception = true ;
+            Main.showAlert("hi" , null , null , Alert.AlertType.ERROR);
+        }
+
             String label = (String) labelBox.getValue();
-            count = Integer.valueOf(countField.getText());
 
 
             ArrayList<Product> productList = Main.productFileTOArraylist();
@@ -67,18 +71,34 @@ public class CreateProductController implements Initializable {
                 }
             }
 
-            boolean isFound2 = false ;
-            for (Product i: productList) {
+            boolean isFound2 = false;
+            for (Product i : productList) {
                 if (i.getpName().equals(Name) && i.getpStoreID().equals(AdminLogin.loginStoreID)) {
-                    isFound2 = true ;
-                    Main.showAlert("ERROR !" , "there is already a product with this name in this store" ,
-                            "you can charge it" , Alert.AlertType.ERROR );
+                    isFound2 = true;
+                    Main.showAlert("ERROR !", "there is already a product with this name in this store",
+                            "you can charge it", Alert.AlertType.ERROR);
                 }
             }
-            System.out.println(isFound2);
 
-            if (!isFound && ! isFound2) {
-                fw.write(Name + "\n" + id + "\n" + AdminLogin.loginStoreID + "\n" + price + "\n" + count + "\n" + label + "\n");
+            if ((!isFound) && (!isFound2) && (!exception)) {
+                ArrayList<Store> storeList = Main.storeFileTOArraylist();
+                for (Store i: storeList) {
+                    if (i.getsID().equals(AdminLogin.loginStoreID)) {
+                        int total = i.getTotalProductCount() ;
+                        System.out.println(total);
+                        total = total + count ;
+                        i.setTotalProductCount(total);
+
+                        PrintWriter pw = new PrintWriter("stores.txt") ;
+                        pw.close();
+                        FileWriter fw2 = new FileWriter("stores.txt" ) ;
+                        for (Store j : storeList) {
+                            fw2.write(j.getsName() +"\n" + j.getsID() + "\n" + j.hasAdmin1()+ "\n"+
+                                    j.hasAdmin2()+ "\n"+ j.hasAdmin3()+"\n" + j.getTotalProductCount() + "\n"+j.getIncome()+"\n" ) ;
+                        }fw2.close();
+                    }
+                }
+                fw.write(Name + "\n" + id + "\n" + price + "\n" + AdminLogin.loginStoreID + "\n" + label + "\n" + count + "\n");
                 fw.close();
 
                 Main.showAlert("Done!", "product added successfully", null, Alert.AlertType.INFORMATION);
@@ -89,23 +109,12 @@ public class CreateProductController implements Initializable {
                 stage.setScene(scene);
                 stage.show();
             }
-        }catch (Exception e) {
-            Main.showAlert("ERROR" , "price and count should be numbers" , null , Alert.AlertType.ERROR);
-            e.toString();
-        }
-    }
 
-    public void addCount() {
-        count ++ ;
     }
-
-    public void subCount () {
-        count -- ;
-    }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         labelBox.getItems().addAll("food" , "clothes" , "tools" , "health" , "digital" , "sports" , "furniture") ;
+        productStoreIdField.setText(AdminLogin.loginStoreID);
     }
 }

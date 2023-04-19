@@ -4,18 +4,21 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalmidtermproj.ChargeOrDischarge">
    <children>
       <Label layoutX="230.0" layoutY="34.0" text="Charge or Discharge" />
-      <RadioButton layoutX="247.0" layoutY="191.0" mnemonicParsing="false" text="Discharge" />
-      <RadioButton layoutX="114.0" layoutY="191.0" mnemonicParsing="false" text="Charge" />
-      <TextField layoutX="209.0" layoutY="98.0" />
+      <RadioButton fx:id="discharge" layoutX="247.0" layoutY="191.0" mnemonicParsing="false" text="Discharge">
+         <toggleGroup>
+            <ToggleGroup fx:id="group" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="charge" layoutX="114.0" layoutY="191.0" mnemonicParsing="false" text="Charge" toggleGroup="$group" />
+      <TextField fx:id="proIdField" layoutX="209.0" layoutY="98.0" />
       <Label layoutX="68.0" layoutY="102.0" text="Enter the id of product : " />
-      <Button layoutX="258.0" layoutY="331.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="submit" layoutX="258.0" layoutY="331.0" mnemonicParsing="false" onAction="#chargeOrDischarge" text="Submit" />
       <Label layoutX="119.0" layoutY="264.0" text="Count :" />
-      <TextField layoutX="184.0" layoutY="260.0" />
+      <TextField fx:id="countField" layoutX="184.0" layoutY="260.0" prefHeight="26.0" prefWidth="60.0" />
    </children>
 </AnchorPane>

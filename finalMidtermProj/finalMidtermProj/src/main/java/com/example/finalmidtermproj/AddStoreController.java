@@ -47,7 +47,8 @@ public class AddStoreController  {
         }
 
             if (! isFound) {
-                fw.write(newStoreName + "\n" + newStoreId + "\n" + false + "\n" + false + "\n" + false + "\n");
+
+                fw.write(newStoreName + "\n" + newStoreId + "\n" + false + "\n" + false + "\n" + false + "\n" + 0 + "\n" + 0+"\n");
                 fw.close();
 
                 showAlert();

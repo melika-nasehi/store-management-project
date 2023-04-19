@@ -22,6 +22,8 @@ public class ShowOneStoreController {
     public Label admin1Label ;
     public Label admin2Label ;
     public Label admin3Label ;
+    public Label totalLabel ;
+    public Label incomeLabel ;
 
 
     public void ShowInfo () {
@@ -35,9 +37,11 @@ public class ShowOneStoreController {
 
                 nameLabel.setText(i.getsName());
                 idLabel.setText(i.getsID());
-                admin1Label.setText("Empty"); ;
-                admin2Label.setText("Empty"); ;
-                admin3Label.setText("Empty"); ;
+                totalLabel.setText(String.valueOf(i.getTotalProductCount()));
+                admin1Label.setText("Empty");
+                admin2Label.setText("Empty");
+                admin3Label.setText("Empty");
+                incomeLabel.setText(String.valueOf(i.getIncome()));
 
                 for (Admin j: adminList) {
                     if (j.getaStoreID().equals(idField.getText()))

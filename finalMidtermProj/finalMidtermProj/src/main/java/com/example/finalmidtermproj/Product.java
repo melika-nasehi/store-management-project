@@ -67,5 +67,15 @@ public class Product {
     public void setpCount(int pCount) {
         this.pCount = pCount;
     }
+
+    @Override
+    public String toString() {
+        return "Name = " + pName + "\n\n" +
+                "ID = " + pID + "\n\n" +
+                "Price = " + pPrice + "\n\n" +
+                "StoreID = " + pStoreID + "\n\n" +
+                " label = " + label + "\n\n" +
+                " Count=" + pCount ;
+    }
 }
 

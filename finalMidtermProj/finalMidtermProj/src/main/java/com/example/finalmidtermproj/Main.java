@@ -39,7 +39,9 @@ public class Main extends Application {
             String storeID = null ;
             boolean Admin1 = false ;
             boolean Admin2 = false;
-            boolean Admin3;
+            boolean Admin3 = false;
+            int totalProductCount =0;
+            int income = 0 ;
             int num =1 ;
             while ((line = br.readLine()) != null) {
 
@@ -61,8 +63,16 @@ public class Main extends Application {
                 }
                 else if(num==5) {
                     Admin3 = Boolean.valueOf(line) ;
+                    num ++ ;
+                }
+                else if (num == 6) {
+                    totalProductCount = Integer.valueOf(line) ;
+                    num ++ ;
+                }
+                else if (num == 7) {
+                    income = Integer.valueOf(line) ;
                     num = 1 ;
-                    Store store = new Store(storeName , storeID , Admin1 , Admin2 , Admin3 );
+                    Store store = new Store(storeName , storeID , Admin1 , Admin2 , Admin3 , totalProductCount , income);
                     storeList.add(store);
                 }
             }
@@ -135,19 +145,19 @@ public class Main extends Application {
                     num++ ;
                 }
                 else if (num ==3 ) {
-                    productStoreID = line ;
+                    price = Integer.valueOf(line) ;
                     num++ ;
                 }
                 else if (num == 4) {
-                    price = Integer.valueOf(line) ;
+                    productStoreID = line ;
                     num ++ ;
                 }
                 else if (num == 5) {
-                    count = Integer.valueOf(line) ;
+                    label = pLabel.valueOf(line) ;
                     num++ ;
                 }
                 else if (num == 6) {
-                    label = pLabel.valueOf(line) ;
+                    count = Integer.valueOf(line) ;
                     num = 1 ;
                     Product newProduct = new Product(productName , productID , price , productStoreID , label , count) ;
                     productList.add(newProduct) ;
