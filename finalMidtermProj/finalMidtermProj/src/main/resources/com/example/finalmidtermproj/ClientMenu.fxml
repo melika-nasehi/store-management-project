@@ -11,57 +11,52 @@
    <left>
       <VBox prefHeight="552.0" prefWidth="134.0" style="-fx-background-color: #e60099; -fx-border-width: 0px 1px 0px 0px; -fx-border-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="43.0" prefWidth="134.0" textAlignment="CENTER">
+            <Label prefHeight="43.0" prefWidth="134.0" text="        Stores" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label prefHeight="43.0" prefWidth="136.0" text="        Stores" textAlignment="CENTER">
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#buy" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="All Stores" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" onMouseClicked="#shoppingCart" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="My Shopping Cart" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="114.0" mnemonicParsing="false" onMouseClicked="#searchProductsClient" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Search products" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#productsCategory" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text=" Products Category" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="129.0" prefWidth="134.0" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#buy" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="All Stores" textFill="WHITE">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" onMouseClicked="#shoppingCart" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="My Shopping Cart" textFill="WHITE">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="114.0" mnemonicParsing="false" onMouseClicked="#searchProducts" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Search products" textFill="WHITE">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" onMouseClicked="#searchProducts" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text=" Products Category" textFill="WHITE">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="154.0" prefWidth="134.0" textAlignment="CENTER">
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="43.0" prefWidth="134.0" text="      Account" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="43.0" prefWidth="136.0" text="      Account" textAlignment="CENTER">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Button layoutX="10.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#signUp" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Sign up" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#signUp" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Sign up" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#logIn" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Log in" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#logIn" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Log in" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="474.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Log out" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="474.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Log out" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>

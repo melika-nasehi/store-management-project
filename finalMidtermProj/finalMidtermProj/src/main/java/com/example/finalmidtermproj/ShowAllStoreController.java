@@ -10,8 +10,10 @@ public class ShowAllStoreController {
     public TextArea textarea ;
     public Button showButton ;
     public Label totalIncomeLabel ;
+    public Label percentageLabel ;
     String allStores = "" ;
     int totalIncome = 0 ;
+    double percentage = 0 ;
 
 
     public void showAllStores() {
@@ -19,9 +21,11 @@ public class ShowAllStoreController {
         for (Store i: storeList) {
             allStores += i.toString2();
             totalIncome += i.getIncome();
+            percentage += (i.soldProducts*1.000/i.addedProducts)*100 ;
         }
         textarea.setText(allStores);
         totalIncomeLabel.setText(String.valueOf(totalIncome));
+        percentageLabel.setText(String.valueOf(percentage));
         showButton.setDisable(true);
 
     }

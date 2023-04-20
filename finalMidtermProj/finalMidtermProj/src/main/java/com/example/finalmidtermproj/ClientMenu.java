@@ -38,13 +38,14 @@ public class ClientMenu implements Initializable {
         loadPage("myShoppingCart");
     }
     @FXML
-    private void searchProducts (MouseEvent event) {
-        loadPage("searchProducts");
+    private void searchProductsClient (MouseEvent event) {
+        loadPage("searchProductsClient");
     }
     @FXML
-    private void displayone (MouseEvent event) {
-        loadPage("ShowOneStore");
+    private void productsCategory (MouseEvent event) {
+        loadPage("productsCategory");
     }
+
     @FXML
     private void signUp (MouseEvent event) {
         loadPage("signUp");

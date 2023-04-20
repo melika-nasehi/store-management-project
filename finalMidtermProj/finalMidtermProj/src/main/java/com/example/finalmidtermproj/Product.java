@@ -75,7 +75,7 @@ public class Product {
                 "Price = " + pPrice + "\n\n" +
                 "StoreID = " + pStoreID + "\n\n" +
                 " label = " + label + "\n\n" +
-                " Count=" + pCount ;
+                " Count=" + pCount + "\n______________________________________\n";
     }
 
     public String toString2() {

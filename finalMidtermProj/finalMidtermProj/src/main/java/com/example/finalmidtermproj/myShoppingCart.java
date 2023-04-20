@@ -53,14 +53,18 @@ public class myShoppingCart implements Initializable {
                             income += price;
                             int total = j.getTotalProductCount();
                             total -= i.getPurchaseCount();
+                            int sold = j.getSoldProducts();
+                            sold = sold + i.getPurchaseCount();
                             j.setIncome(income);
                             j.setTotalProductCount(total);
+                            j.setSoldProducts(sold);
                             PrintWriter pw = new PrintWriter("stores.txt");
                             pw.close();
                             FileWriter fw = new FileWriter("stores.txt");
                             for (Store k : storeList) {
                                 fw.write(k.getsName() + "\n" + k.getsID() + "\n" + k.hasAdmin1() + "\n" +
-                                        k.hasAdmin2() + "\n" + k.hasAdmin3() + "\n" + k.getTotalProductCount() + "\n" + k.getIncome() + "\n");
+                                        k.hasAdmin2() + "\n" + k.hasAdmin3() + "\n" + k.getTotalProductCount() +
+                                        "\n" + k.getIncome() + "\n" + k.getAddedProducts()+"\n"+k.getSoldProducts()+"\n");
                             }
                             fw.close();
                         }

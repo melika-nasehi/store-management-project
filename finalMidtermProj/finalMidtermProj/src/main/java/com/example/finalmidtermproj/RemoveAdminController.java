@@ -63,7 +63,8 @@ public class RemoveAdminController {
                 FileWriter fw2 = new FileWriter("stores.txt" ) ;
                 for (Store j: storeList) {
                     fw2.write(j.getsName() +"\n" + j.getsID() + "\n" + j.hasAdmin1()+ "\n"+ j.hasAdmin2()+
-                            "\n"+ j.hasAdmin3()+"\n" + j.getTotalProductCount() + "\n"+j.getIncome()+"\n") ;
+                            "\n"+ j.hasAdmin3()+"\n" + j.getTotalProductCount() + "\n"+j.getIncome()+"\n" +
+                            j.getAddedProducts()+"\n" + j.getSoldProducts()+"\n") ;
                 }fw2.close();
 
                 Main.showAlert("DONE!" , "Admin removed successfully", null , Alert.AlertType.INFORMATION);

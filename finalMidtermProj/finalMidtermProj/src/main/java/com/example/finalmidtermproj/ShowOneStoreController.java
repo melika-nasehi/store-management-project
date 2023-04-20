@@ -24,6 +24,8 @@ public class ShowOneStoreController {
     public Label admin3Label ;
     public Label totalLabel ;
     public Label incomeLabel ;
+    public Label soldLabel ;
+    public Label addedLabel ;
 
 
     public void ShowInfo () {
@@ -42,6 +44,8 @@ public class ShowOneStoreController {
                 admin2Label.setText("Empty");
                 admin3Label.setText("Empty");
                 incomeLabel.setText(String.valueOf(i.getIncome()));
+                addedLabel.setText(String.valueOf(i.getAddedProducts()));
+                soldLabel.setText(String.valueOf(i.getSoldProducts()));
 
                 for (Admin j: adminList) {
                     if (j.getaStoreID().equals(idField.getText()))
@@ -52,26 +56,14 @@ public class ShowOneStoreController {
                             admin2Label.setText(j.toString()) ;
                         else if (j.getaShift().equals("3"))
                             admin3Label.setText(j.toString()) ;
-
                     }
-
                 }
-
                 isFound = true ;
-
             }
         }
         if (! isFound)
-            showAlert();
-
+            Main.showAlert("NOT FOUND!" ,"No store with" +
+                    " this ID was found" , null , Alert.AlertType.ERROR );
     }
-
-    private void showAlert() {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("NOT FOUND!");
-        alert.setHeaderText("No store with this ID was found");
-        alert.showAndWait();
-    }
-
 
 }

@@ -87,13 +87,17 @@ public class CreateProductController implements Initializable {
                         int total = i.getTotalProductCount() ;
                         total = total + count ;
                         i.setTotalProductCount(total);
+                        int added = i.getAddedProducts();
+                        added = added + count ;
+                        i.setAddedProducts(added);
 
                         PrintWriter pw = new PrintWriter("stores.txt") ;
                         pw.close();
                         FileWriter fw2 = new FileWriter("stores.txt" ) ;
                         for (Store j : storeList) {
                             fw2.write(j.getsName() +"\n" + j.getsID() + "\n" + j.hasAdmin1()+ "\n"+
-                                    j.hasAdmin2()+ "\n"+ j.hasAdmin3()+"\n" + j.getTotalProductCount() + "\n"+j.getIncome()+"\n" ) ;
+                                    j.hasAdmin2()+ "\n"+ j.hasAdmin3()+"\n" + j.getTotalProductCount() +
+                                    "\n"+j.getIncome()+"\n"+j.getAddedProducts()+"\n"+j.getSoldProducts()+"\n") ;
                         }fw2.close();
                     }
                 }

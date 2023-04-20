@@ -44,7 +44,8 @@ public class RemoveStoreController {
                 FileWriter fw = new FileWriter("stores.txt" ) ;
                 for (Store j: storeList) {
                     fw.write(j.getsName() +"\n" + j.getsID() + "\n" + j.hasAdmin1()+ "\n"+
-                            j.hasAdmin2()+ "\n"+ j.hasAdmin3()+"\n" + j.getTotalProductCount() + "\n"+j.getIncome()+"\n" ) ;
+                            j.hasAdmin2()+ "\n"+ j.hasAdmin3()+"\n" + j.getTotalProductCount() +
+                            "\n"+j.getIncome()+"\n"+j.getAddedProducts()+ "\n" +j.getSoldProducts()+"\n" ) ;
                 }fw.close();
 
                 ArrayList<Admin> adminList = Main.adminFileTOArraylist();

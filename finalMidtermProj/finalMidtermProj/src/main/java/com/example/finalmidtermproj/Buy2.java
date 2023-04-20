@@ -83,6 +83,17 @@ public class Buy2 implements Initializable {
 
     }
 
+    public void backToPreviousPage() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Buy.fxml"));
+        Pane registerPane = fxmlLoader.load();
+        try {
+            anchor.getChildren().clear();
+            anchor.getChildren().add(registerPane);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ArrayList<Product> productList = Main.productFileTOArraylist();

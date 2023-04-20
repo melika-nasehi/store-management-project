@@ -11,57 +11,47 @@
    <left>
       <VBox prefHeight="552.0" prefWidth="134.0" style="-fx-background-color: green; -fx-border-width: 0px 1px 0px 0px; -fx-border-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="43.0" prefWidth="134.0" textAlignment="CENTER">
+            <Label prefHeight="43.0" prefWidth="134.0" text="      Products" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label prefHeight="43.0" prefWidth="136.0" text="      Products" textAlignment="CENTER">
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#createProduct" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Create new" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" onMouseClicked="#chargeProduct" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Charge / Discharge" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="114.0" mnemonicParsing="false" onMouseClicked="#findProductToEdit" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Edit info" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#searchProduct" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Search" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#factors" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Factors" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="177.0" prefWidth="134.0" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#createProduct" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Create new" textFill="WHITE">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" onMouseClicked="#chargeProduct" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Charge / Discharge" textFill="WHITE">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="114.0" mnemonicParsing="false" onMouseClicked="#findProductToEdit" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Edit info" textFill="WHITE">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#searchProduct" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Search" textFill="WHITE">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#factors" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Factors" textFill="WHITE">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#two" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="2" textFill="WHITE">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="158.0" prefWidth="134.0" textAlignment="CENTER">
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="43.0" prefWidth="134.0" text="       Account" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="43.0" prefWidth="136.0" text="      Account" textAlignment="CENTER">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Button layoutX="10.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Log out" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Log out" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>

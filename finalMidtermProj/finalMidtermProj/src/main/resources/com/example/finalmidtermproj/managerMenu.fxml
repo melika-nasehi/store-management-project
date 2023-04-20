@@ -7,51 +7,51 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalmidtermproj.SceneManagerMenuController">
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalmidtermproj.SceneManagerMenuController">
    <left>
-      <VBox prefHeight="322.0" prefWidth="98.0" style="-fx-background-color: #2596be; -fx-border-width: 0px 1px 0px 0px; -fx-border-color: white;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="552.0" prefWidth="134.0" style="-fx-background-color: #2596be; -fx-border-width: 0px 1px 0px 0px; -fx-border-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="43.0" prefWidth="98.0" text="     Stores" textAlignment="CENTER">
+            <Label prefHeight="43.0" prefWidth="134.0" text="        Stores" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#addstore" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Add" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#addstore" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Add" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="61.0" mnemonicParsing="false" onMouseClicked="#removestore" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Remove" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="61.0" mnemonicParsing="false" onMouseClicked="#removestore" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Remove" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#displayall" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Display all" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#displayall" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Display all" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#displayone" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Display one" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#displayone" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Display one" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="98.0" text="           " textAlignment="CENTER">
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="57.0" prefWidth="134.0" text="           " textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="43.0" prefWidth="98.0" text="    Admins" textAlignment="CENTER">
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="43.0" prefWidth="134.0" text="       Admins" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="10.0" layoutY="61.0" mnemonicParsing="false" onMouseClicked="#addadmin" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Add" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="61.0" mnemonicParsing="false" onMouseClicked="#addadmin" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Add" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#removeadmin" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Remove" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#removeadmin" prefHeight="48.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Remove" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>
@@ -61,12 +61,12 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="202.0" prefHeight="43.0" prefWidth="98.0" text="   Account" textAlignment="CENTER">
+            <Label layoutX="10.0" layoutY="202.0" prefHeight="43.0" prefWidth="134.0" text="       Account" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="10.0" layoutY="245.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="36.0" prefWidth="98.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Logout" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="245.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="49.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Logout" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>

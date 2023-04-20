@@ -49,17 +49,22 @@ public class ChargeOrDischarge {
                             proCount = i.getpCount() ;
                             int income = j.getIncome();
                             int proPrice = i.getpPrice();
+                            int sold = j.getSoldProducts();
+                            int added = j.getAddedProducts();
 
                             if (charge.isSelected()) {
                                 proCount = proCount + newCount ;
                                 total = total + newCount ;
+                                added += newCount ;
                                 i.setpCount(proCount);
                                 j.setTotalProductCount(total);
+                                j.setAddedProducts(added);
                             }
                             else if (discharge.isSelected()) {
                                 proCount = proCount - newCount ;
                                 total = total - newCount ;
                                 income = income + proPrice*newCount ;
+                                sold += newCount ;
 
                                 if (proCount <0 ){
                                     Main.showAlert("ERROR!" , "There are only "+i.getpCount() +
@@ -69,6 +74,7 @@ public class ChargeOrDischarge {
                                 i.setpCount(proCount);
                                 j.setTotalProductCount(total);
                                 j.setIncome(income);
+                                j.setSoldProducts(sold);
                             }
 
                             PrintWriter pw = new PrintWriter("products.txt") ;
@@ -84,7 +90,8 @@ public class ChargeOrDischarge {
                             FileWriter fw2 = new FileWriter("stores.txt" ) ;
                             for (Store r : storeList) {
                                 fw2.write(r.getsName() +"\n" + r.getsID() + "\n" + r.hasAdmin1()+ "\n"+
-                                        r.hasAdmin2()+ "\n"+ r.hasAdmin3()+"\n" + r.getTotalProductCount() + "\n" +r.getIncome()+"\n" ) ;
+                                        r.hasAdmin2()+ "\n"+ r.hasAdmin3()+"\n" + r.getTotalProductCount() +
+                                        "\n" +r.getIncome()+"\n" + r.getAddedProducts()+"\n"+r.getSoldProducts()+"\n") ;
                             }fw2.close();
                         }
                     }

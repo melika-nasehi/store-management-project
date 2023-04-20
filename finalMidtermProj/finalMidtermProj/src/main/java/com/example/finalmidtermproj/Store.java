@@ -11,11 +11,12 @@ public class Store {
     boolean hasAdmin3  ;
     int totalProductCount ;
     int income ;
+    int addedProducts ;
+    int soldProducts ;
 
-    //ArrayList<Product> products = new ArrayList<>();
 
-
-    public Store (String name, String id , boolean A1 , boolean A2 , boolean A3 , int totalProCount , int income) {       //manager
+    public Store (String name, String id , boolean A1 , boolean A2 , boolean A3 ,
+                  int totalProCount , int income , int addedProducts , int soldProducts) {       //manager
         sName = name ;
         sID = id ;
         hasAdmin1 = A1 ;
@@ -23,6 +24,8 @@ public class Store {
         hasAdmin3 = A3 ;
         totalProductCount = totalProCount ;
         this.income = income ;
+        this.addedProducts = addedProducts;
+        this.soldProducts = soldProducts ;
     }
     public Store() {
     }
@@ -77,6 +80,22 @@ public class Store {
         this.totalProductCount = totalProductCount;
     }
 
+    public int getAddedProducts() {
+        return addedProducts;
+    }
+
+    public void setAddedProducts(int addedProducts) {
+        this.addedProducts = addedProducts;
+    }
+
+    public int getSoldProducts() {
+        return soldProducts;
+    }
+
+    public void setSoldProducts(int soldProducts) {
+        this.soldProducts = soldProducts;
+    }
+
     public int getIncome() {
         return income;
     }
@@ -95,8 +114,9 @@ public class Store {
     }
 
     public String toString2() {
-        return "Name of store : " +sName +"\n"+ "Total count of products : " + totalProductCount + "\n" +
-                "Income : " + income +"\n ________________________________\n" ;
+        return "Name of store : " +sName +"\nTotal count of products : " + totalProductCount + "\nIncome : "
+                + income + "\nPercentage (sold/added) : "+ (soldProducts*1.000/addedProducts)*100 +
+                "\n ________________________________\n" ;
     }
 
     public String toString3 () {

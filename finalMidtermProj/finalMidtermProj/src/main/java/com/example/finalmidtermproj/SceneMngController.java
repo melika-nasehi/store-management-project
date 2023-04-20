@@ -27,7 +27,7 @@ public class SceneMngController {
 
 
     public void switchToSceneManager(ActionEvent event) throws IOException {
-        if (usernameField.getText().equals("") && passwordField.getText().equals("")) {
+        if (usernameField.getText().equals("melika") && passwordField.getText().equals("1234")) {
             root = FXMLLoader.load(getClass().getResource("managerMenu.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);

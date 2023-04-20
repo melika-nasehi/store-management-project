@@ -42,6 +42,8 @@ public class Main extends Application {
             boolean Admin3 = false;
             int totalProductCount =0;
             int income = 0 ;
+            int added = 0;
+            int sold = 0 ;
             int num =1 ;
             while ((line = br.readLine()) != null) {
 
@@ -71,8 +73,17 @@ public class Main extends Application {
                 }
                 else if (num == 7) {
                     income = Integer.valueOf(line) ;
+                    num ++ ;
+                }
+                else if (num == 8) {
+                    added = Integer.valueOf(line) ;
+                    num++ ;
+                }
+                else if (num == 9) {
+                    sold = Integer.valueOf(line) ;
                     num = 1 ;
-                    Store store = new Store(storeName , storeID , Admin1 , Admin2 , Admin3 , totalProductCount , income);
+                    Store store = new Store(storeName , storeID , Admin1 , Admin2 , Admin3 ,
+                            totalProductCount , income , added , sold);
                     storeList.add(store);
                 }
             }
