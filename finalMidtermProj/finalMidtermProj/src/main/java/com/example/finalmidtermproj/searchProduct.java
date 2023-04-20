@@ -26,7 +26,7 @@ public class searchProduct {
 
         if (nameOption.isSelected()) {
             for (Product i: productList) {
-                if (i.getpName().equals(textField.getText())) {
+                if (i.getpName().equals(textField.getText()) && i.getpStoreID().equals(AdminLogin.loginStoreID)) {
                     isFound = true ;
                     toStringLabel.setText(i.toString());
                 }

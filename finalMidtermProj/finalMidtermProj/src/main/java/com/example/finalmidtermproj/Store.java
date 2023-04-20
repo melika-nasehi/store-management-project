@@ -93,6 +93,15 @@ public class Store {
                 ", products="  +
                 '}';
     }
+
+    public String toString2() {
+        return "Name of store : " +sName +"\n"+ "Total count of products : " + totalProductCount + "\n" +
+                "Income : " + income +"\n ________________________________\n" ;
+    }
+
+    public String toString3 () {
+        return "Store name : " + sName +"\n" + "Store ID : " + sID + "\n____________________________________\n" ;
+    }
 }
 
 

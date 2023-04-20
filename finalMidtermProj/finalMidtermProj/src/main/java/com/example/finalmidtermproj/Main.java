@@ -169,6 +169,121 @@ public class Main extends Application {
         return productList ;
     }
 
+    public static ArrayList<Client> clientFileTOArraylist() {
+        ArrayList<Client> clientList = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader("clients.txt"))) {
+            String line ;
+            String username = null ;
+            String password = null ;
+            int num = 1 ;
+            while ((line = br.readLine()) != null) {
+
+                if (num ==1) {
+                    username = line ;
+                    num++ ;
+                }
+                else if (num == 2) {
+                    password= line ;
+                    num = 1 ;
+                    Client client = new Client(username , password) ;
+                    clientList.add(client);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return clientList ;
+    }
+
+    public static ArrayList<ShoppingCart> cartFileTOArraylist() {
+        ArrayList<ShoppingCart> cartList = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader("cart.txt"))) {
+            String line ;
+            String productName = null ;
+            pLabel productLabel = null ;
+            int productPrice = 0 ;
+            int purchaseCount = 0 ;
+            String username = null ;
+            String productID = null ;
+            String storeID = null ;
+            int num = 1 ;
+            while ((line = br.readLine()) != null) {
+
+                if (num ==1) {
+                    productName  = line ;
+                    num++ ;
+                }
+                else if (num == 2) {
+                    productLabel= pLabel.valueOf(line);
+                    num ++ ;
+
+                }
+                else if (num == 3) {
+                    productPrice = Integer.parseInt(line);
+                    num++ ;
+                }
+                else if (num == 4) {
+                    purchaseCount = Integer.parseInt(line);
+                    num++ ;
+                }
+                else if (num == 5) {
+                    username = line;
+                    num++ ;
+                }
+                else if (num == 6) {
+                    productID = line;
+                    num ++ ;
+                }
+                else if (num == 7) {
+                    storeID = line ;
+                    num = 1 ;
+                    ShoppingCart shoppingCart = new ShoppingCart(productName , productLabel , productPrice ,
+                            purchaseCount , username , productID , storeID) ;
+                    cartList.add(shoppingCart) ;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return cartList ;
+    }
+
+    public static ArrayList<Factor> factorFileTOArraylist() {
+        File file = new File("factors.txt") ;
+        ArrayList<Factor> factorList = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader("factors.txt"))) {
+            String line ;
+            String factor = null ;
+            String ID = null ;
+            String info = null ;
+            int num = 1 ;
+            while ((line = br.readLine()) != null) {
+
+                 if (num == 1) {
+                    ID = line ;
+                    num ++ ;
+                }
+                else if (num == 2) {
+                    if( ! line.contains("factor") ) {
+                        info += line ;
+                        info += "\n" ;
+                        continue;
+                    }
+                    Factor newFactor = new Factor(ID , info) ;
+                    factorList.add(newFactor) ;
+                     info = null ;
+                    num = 1 ;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return factorList ;
+    }
+
     public static void main(String[] args) {
         launch();
 

@@ -41,7 +41,7 @@
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#one" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="1" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#factors" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Factors" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>

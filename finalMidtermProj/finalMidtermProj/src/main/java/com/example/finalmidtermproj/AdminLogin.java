@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class AdminLogin {
-    private Stage stage  ;
+    public Stage stage  ;
     private Scene scene ;
     private Parent root ;
 
@@ -34,7 +34,6 @@ public class AdminLogin {
 
         loginAdminID = adminUserField.getText();
         loginStoreID = adminPassField.getText();
-        System.out.println(loginStoreID);
         boolean isFound = false;
 
         ArrayList<Admin> adminList = Main.adminFileTOArraylist();

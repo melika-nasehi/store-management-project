@@ -75,7 +75,7 @@ public class ChargeOrDischarge {
                             pw.close();
                             FileWriter fw1 = new FileWriter("products.txt" ) ;
                             for (Product k : productList) {
-                                fw1.write(k.getpName() + "\n" + k.getpID() + "\n" + k.getpPrice() + "\n" + AdminLogin.loginStoreID +
+                                fw1.write(k.getpName() + "\n" + k.getpID() + "\n" + k.getpPrice() + "\n" + k.getpStoreID() +
                                         "\n" + k.getpLabel() + "\n" + k.getpCount() + "\n"); ;
                             }fw1.close();
 

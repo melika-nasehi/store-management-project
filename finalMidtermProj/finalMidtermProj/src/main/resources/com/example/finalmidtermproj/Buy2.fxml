@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalmidtermproj.Buy2">
+   <children>
+      <TextArea fx:id="allProducts" layoutX="6.0" layoutY="94.0" prefHeight="297.0" prefWidth="587.0" />
+      <Label layoutX="22.0" layoutY="61.0" text="i want to buy :" />
+      <TextField fx:id="productNameField" layoutX="111.0" layoutY="57.0" prefHeight="26.0" prefWidth="111.0" promptText="product name" />
+      <Label layoutX="247.0" layoutY="61.0" text="Count :" />
+      <Spinner fx:id="spinner" editable="true" layoutX="300.0" layoutY="57.0" prefHeight="26.0" prefWidth="111.0" />
+      <Button layoutX="450.0" layoutY="57.0" mnemonicParsing="false" onAction="#addToCart" text="add to shopping cart" />
+   </children>
+</AnchorPane>

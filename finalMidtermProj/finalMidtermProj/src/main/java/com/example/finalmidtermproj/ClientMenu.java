@@ -8,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -19,43 +18,41 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class SceneAdminController implements Initializable {
-
+public class ClientMenu implements Initializable {
     @FXML
-    private BorderPane bp2 ;
+    private BorderPane bp3 ;
     @FXML
-    private AnchorPane ap2;
+    private AnchorPane ap3;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
 
     @FXML
-    private void createProduct (MouseEvent event) {
-        loadPage("CreateProduct");
+    private void buy (MouseEvent event) {
+        loadPage("Buy");
 
     }
+    @FXML
+    private void shoppingCart (MouseEvent event) {
+        loadPage("myShoppingCart");
+    }
+    @FXML
+    private void searchProducts (MouseEvent event) {
+        loadPage("searchProducts");
+    }
+    @FXML
+    private void displayone (MouseEvent event) {
+        loadPage("ShowOneStore");
+    }
+    @FXML
+    private void signUp (MouseEvent event) {
+        loadPage("signUp");
+    }
 
     @FXML
-    private void chargeProduct (MouseEvent event) {
-        loadPage("chargeOrDischarge");
-    }
-    @FXML
-    private void findProductToEdit (MouseEvent event) {
-        loadPage("FindProductToEdit");
-    }
-
-    @FXML
-    private void searchProduct (MouseEvent event) {
-        loadPage("searchProduct");
-    }
-    @FXML
-    private void factors (MouseEvent event) {
-        loadPage("Factors");
-    }
-    @FXML
-    private void two (MouseEvent event) {
-        loadPage("two");
+    private void logIn (MouseEvent event) {
+        loadPage("logIn");
     }
 
     @FXML
@@ -72,6 +69,7 @@ public class SceneAdminController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.get() == ButtonType.OK) {
+            logIn.isLoggedIn = false ;
 
             root = FXMLLoader.load(getClass().getResource("scene1.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -90,7 +88,7 @@ public class SceneAdminController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        bp2.setCenter(root);
+        bp3.setCenter(root);
 
 
     }

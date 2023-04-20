@@ -77,5 +77,12 @@ public class Product {
                 " label = " + label + "\n\n" +
                 " Count=" + pCount ;
     }
+
+    public String toString2() {
+        return "Name : " + pName + "\n" +
+                "Label : " + label + "\n" +
+                "Price : " + pPrice + "\n" +
+                "available in stock : " + pCount + "\n_____________________________________\n" ;
+    }
 }
 

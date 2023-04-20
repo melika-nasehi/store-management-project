@@ -44,12 +44,12 @@ public class editProductInfo implements Initializable {
         ArrayList<Product> productList = Main.productFileTOArraylist();
         boolean isFound = false ;
         for (Product i: productList) {
-            if (i.getpName().equals(name) && i.getpStoreID().equals(AdminLogin.loginStoreID)) {
+            if (i.getpName().equals(name) && i.getpStoreID().equals(AdminLogin.loginStoreID) &&  ! exName.getText().equals(name)) {
                 isFound = true ;
                 Main.showAlert("ERROR!" , "there is already a product with this name in this store" ,
                         "change new name" , Alert.AlertType.ERROR);
             }
-            if(i.getpID().equals(id)) {
+            if(i.getpID().equals(id) && ! exID.getText().equals(id)) {
                 isFound = true ;
                 Main.showAlert("ERROR!" , "this ID is already taken" ,
                         "change new ID" , Alert.AlertType.ERROR );
@@ -68,7 +68,7 @@ public class editProductInfo implements Initializable {
             pw.close();
             FileWriter fw = new FileWriter("products.txt" ) ;
             for (Product i: productList) {
-                fw.write(i.getpName() + "\n" + i.getpID() + "\n" + i.getpPrice() + "\n" + AdminLogin.loginStoreID +
+                fw.write(i.getpName() + "\n" + i.getpID() + "\n" + i.getpPrice() + "\n" + i.getpStoreID() +
                         "\n" + i.getpLabel() + "\n" + i.getpCount() + "\n");
             }fw.close();
 

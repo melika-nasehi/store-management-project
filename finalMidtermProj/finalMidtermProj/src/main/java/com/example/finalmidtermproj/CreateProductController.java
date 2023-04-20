@@ -85,7 +85,6 @@ public class CreateProductController implements Initializable {
                 for (Store i: storeList) {
                     if (i.getsID().equals(AdminLogin.loginStoreID)) {
                         int total = i.getTotalProductCount() ;
-                        System.out.println(total);
                         total = total + count ;
                         i.setTotalProductCount(total);
 

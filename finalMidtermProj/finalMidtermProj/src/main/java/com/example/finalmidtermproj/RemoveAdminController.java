@@ -11,7 +11,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class RemoveAdminController {
@@ -27,26 +29,44 @@ public class RemoveAdminController {
     @FXML
     private void deleteAdmin (ActionEvent event) throws IOException {
 
-        boolean isFound = false ;
         ArrayList<Admin> adminList = Main.adminFileTOArraylist();
+        boolean isFound = false ;
         for (Admin i: adminList) {
             if (i.getaID().equals(adminDeleteID.getText())) {
 
                 adminList.remove(i) ;
-                String shift = i.getaShift() ;
-                Main.showAlert("DONE!" , "Admin removed successfully", null , Alert.AlertType.INFORMATION);
-                AddStoreController addStoreController = new AddStoreController();
-                for (Store j: AddStoreController.stores) {
-//                    if (shift == 1) {
-//                        j.setAdmin1(null);
-//                    }
-//                    else if (shift == 2) {
-//                        j.setAdmin2(null);
-//                    }
-//                    else if (shift == 3) {
-//                        j.setAdmin3(null);
-//                    }
+                int shift = Integer.parseInt(i.getaShift());
+                String storeID = i.aStoreID ;
+
+                PrintWriter pw = new PrintWriter("admins.txt");
+                pw.close();
+                FileWriter fw = new FileWriter("admins.txt" ) ;
+                for (Admin j: adminList) {
+                    fw.write(j.getaName() +"\n" + j.getaID() + "\n" + j.getaStoreID()+ "\n"+ j.getaShift()+ "\n") ;
+                }fw.close();
+
+                ArrayList<Store> storeList = Main.storeFileTOArraylist();
+                for (Store j: storeList) {
+                    if (j.getsID().equals(storeID)) {
+                        if (shift == 1) {
+                            j.setHasAdmin1(false);
+                        } else if (shift == 2) {
+                            j.setHasAdmin2(false);
+                        } else if (shift == 3) {
+                            j.setHasAdmin3(false);
+                        }
+                    }
                 }
+
+                PrintWriter pw2 = new PrintWriter("stores.txt");
+                pw2.close();
+                FileWriter fw2 = new FileWriter("stores.txt" ) ;
+                for (Store j: storeList) {
+                    fw2.write(j.getsName() +"\n" + j.getsID() + "\n" + j.hasAdmin1()+ "\n"+ j.hasAdmin2()+
+                            "\n"+ j.hasAdmin3()+"\n" + j.getTotalProductCount() + "\n"+j.getIncome()+"\n") ;
+                }fw2.close();
+
+                Main.showAlert("DONE!" , "Admin removed successfully", null , Alert.AlertType.INFORMATION);
 
                 root = FXMLLoader.load(getClass().getResource("managerMenu.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
